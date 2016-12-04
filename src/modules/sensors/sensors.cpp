@@ -2214,7 +2214,7 @@ Sensors::rc_poll()
 
 			/* publish manual_control_setpoint topic */
 			if (_manual_control_pub != nullptr) {
-				orb_publish(ORB_ID(manual_control_setpoint), _manual_control_pub, &manual);
+				orb_publish_auto(ORB_ID(manual_control_setpoint), _manual_control_pub, &manual, ORB_PRIO_HIGH);
 
 			} else {
 				_manual_control_pub = orb_advertise(ORB_ID(manual_control_setpoint), &manual);

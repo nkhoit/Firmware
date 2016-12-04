@@ -1453,7 +1453,7 @@ MavlinkReceiver::handle_message_manual_control(mavlink_message_t *msg)
 			_manual_pub = orb_advertise(ORB_ID(manual_control_setpoint), &manual);
 
 		} else {
-			orb_publish(ORB_ID(manual_control_setpoint), _manual_pub, &manual);
+			orb_publish_auto(ORB_ID(manual_control_setpoint), _manual_pub, &manual, ORB_PRIO_DEFAULT);
 		}
 	}
 }
