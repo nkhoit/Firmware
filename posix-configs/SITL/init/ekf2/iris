@@ -27,9 +27,13 @@ param set EKF2_HGT_MODE 0
 param set EKF2_MAG_TYPE 1
 param set MAV_TYPE 2
 param set MC_PITCH_P 6
-param set MC_PITCHRATE_P 0.2
+param set MC_PITCHRATE_P 7.0
+param set MC_PITCHRATE_D 0.04
+param set MC_PITCHRATE_I 2.0
 param set MC_ROLL_P 6
-param set MC_ROLLRATE_P 0.2
+param set MC_ROLLRATE_P 1.0
+param set MC_ROLLRATE_D 0.02
+param set MC_ROLLRATE_I 1.0
 param set MIS_TAKEOFF_ALT 2.5
 param set MPC_HOLD_MAX_Z 2.0
 param set MPC_Z_VEL_I 0.15
