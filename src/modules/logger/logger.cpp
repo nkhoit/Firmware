@@ -576,6 +576,7 @@ void Logger::add_common_topics()
 	add_topic("vehicle_vision_position");
 	add_topic("vtol_vehicle_status", 100);
 	add_topic("wind_estimate", 100);
+    add_topic("mc_att_ctrl_status");
 }
 
 void Logger::add_estimator_replay_topics()

@@ -1021,6 +1021,22 @@ MulticopterAttitudeControl::control_attitude_rates(float dt)
 	/* angular rates error */
 	math::Vector<3> rates_err = _rates_sp - rates;
 
+    _controller_status.roll_rate = rates(0);
+    _controller_status.pitch_rate = rates(1);
+    _controller_status.yaw_rate = rates(2);
+
+    _controller_status.roll_rate_sp = _rates_sp(0);
+    _controller_status.pitch_rate_sp = _rates_sp(1);
+    _controller_status.yaw_rate_sp = _rates_sp(2);
+
+    _controller_status.roll_rate_err = rates_err(0);
+    _controller_status.pitch_rate_err = rates_err(1);
+    _controller_status.yaw_rate_err = rates_err(2);
+
+    _controller_status.roll_rate_int = _rates_int(0);
+    _controller_status.pitch_rate_int = _rates_int(1);
+    _controller_status.yaw_rate_int = _rates_int(2);
+
 	_att_control = rates_p_scaled.emult(rates_err) +
 		       _rates_int +
 		       rates_d_scaled.emult(_rates_prev - rates) / dt +
