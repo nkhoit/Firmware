@@ -14,3 +14,6 @@ float32 yaw_rate_err
 float32 roll_rate_int
 float32 pitch_rate_int
 float32 yaw_rate_int
+float32 roll_att_control
+float32 pitch_att_control
+float32 yaw_att_control
